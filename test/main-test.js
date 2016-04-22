@@ -2,20 +2,6 @@ describe(' integration testing', function () {
 
     var lcdDigits = loadLcdDigits();
 
-  /*  beforeEach(function () {
-        lcdDigits = [{digits: ['._.', '|.|', '|_|'], number: 0},
-            {digits: ['...', '..|', '..|'], number: 1},
-            {digits: ['._.', '._|', '|_.'], number: 2},
-            {digits: ['._.', '._|', '._|'], number: 3},
-            {digits: ['...', '|_|', '..|'], number: 4},
-            {digits: ['._.', '|_.', '._|'], number: 5},
-            {digits: ['._.', '|_.', '|_|'], number: 6},
-            {digits: ['._.', '..|', '..|'], number: 7},
-            {digits: ['._.', '|_|', '|_|'], number: 8},
-            {digits: ['._.', '|_|', '..|'], number: 9}];
-
-    });
-    */
     it('should print correct  number digits', function () {
 
         spyOn(console, 'log');
@@ -106,7 +92,7 @@ describe('unit testing', function () {
         });
 
 
-        it('should print correct NumberDigits when we need print third numbers', function () {
+        it('should print correct NumberDigits when we need print one numbers', function () {
 
             var testNumberDigitsText = '._.' + ' ' +'\n' + '._|'+ ' ' + '\n' + '._|' + ' ' + '\n';
             var numberDigitsText = printNumberDigits(thirdNumberDigits);
