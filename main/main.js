@@ -1,6 +1,6 @@
-function showLcdDigits(firstnumber,lcdDigits) {
+function showLcdDigits(firstnumber, lcdDigits) {
 
-    var numberDigits = getNumberDigits(firstnumber,lcdDigits);
+    var numberDigits = getNumberDigits(firstnumber, lcdDigits);
 
     var numberDigitsText = printNumberDigits(numberDigits);
 
@@ -8,7 +8,7 @@ function showLcdDigits(firstnumber,lcdDigits) {
 }
 
 
-function getNumberDigits(firstInteger,lcdDigits) {
+function getNumberDigits(firstInteger, lcdDigits) {
 
 
     var numberDigits = [];
@@ -27,7 +27,6 @@ function getNumberDigits(firstInteger,lcdDigits) {
 }
 
 
-
 function isExit(number, lcdDigits) {
 
     for (var i = 0; i < lcdDigits.length; i++) {
@@ -39,18 +38,17 @@ function isExit(number, lcdDigits) {
 }
 
 
-
 function printNumberDigits(numberDigits) {
 
-        var numberDigistsText = '\n';
-        for (var j = 0; j < 3; j++) {
-            for (var i = 0; i < numberDigits.length; i++) {
-                numberDigistsText += numberDigits[i][j] + ' ';
-            }
-
-            numberDigistsText += '\n';
+    var numberDigistsText = '\n';
+    for (var j = 0; j < 3; j++) {
+        for (var i = 0; i < numberDigits.length; i++) {
+            numberDigistsText += numberDigits[i][j] + ' ';
         }
-        return numberDigistsText;
+
+        numberDigistsText += '\n';
+    }
+    return numberDigistsText;
 }
 
 
