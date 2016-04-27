@@ -1,25 +1,24 @@
-function showLcdDigits(lcdDigits) {
+function showLcdDigits(firstnumber,lcdDigits) {
 
-    var integerNumber = prompt('please input the number');
+    var numberDigits = getNumberDigits(firstnumber,lcdDigits);
 
-    var numberDigits = getNumberDigits(integerNumber, lcdDigits);
     var numberDigitsText = printNumberDigits(numberDigits);
 
     console.log(numberDigitsText);
 }
 
 
-function getNumberDigits(integerNumber, lcdDigits) {
+function getNumberDigits(firstInteger,lcdDigits) {
+
 
     var numberDigits = [];
-    var stringNumber = integerNumber.toString();
-
+    var stringNumber = firstInteger.toString();
 
     for (var i = 0; i < stringNumber.length; i++) {
 
-        if (IsExit(parseInt(stringNumber.charAt(i)), lcdDigits)) {
+        if (isExit(parseInt(stringNumber.charAt(i)), lcdDigits)) {
 
-            var digit = IsExit(parseInt(stringNumber.charAt(i)), lcdDigits);
+            var digit = isExit(parseInt(stringNumber.charAt(i)), lcdDigits);
             numberDigits.push(digit);
         }
     }
@@ -29,13 +28,12 @@ function getNumberDigits(integerNumber, lcdDigits) {
 
 
 
-function IsExit(number, lcdDigits) {
+function isExit(number, lcdDigits) {
 
     for (var i = 0; i < lcdDigits.length; i++) {
         if (number === parseInt(lcdDigits[i].number)) {
 
-            var digit = lcdDigits[i].digits;
-            return digit;
+            return lcdDigits[i].digits;
         }
     }
 }
