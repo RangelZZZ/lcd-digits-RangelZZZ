@@ -28,7 +28,7 @@ describe(' integration testing', function () {
 
     });
 
-    it('should print correct  number digits when input has only one  numbers', function () {
+    it('should print correct  number digits when input has only one  number', function () {
 
         var thirdNumber = 1;
 
@@ -114,7 +114,7 @@ describe('unit testing', function () {
 
         });
 
-        it('should print correct NumberDigitsText when input has only one numbers',function(){
+        it('should print correct NumberDigitsText when input has only one number',function(){
 
             var thirdNumberDigits = [['...', '..|', '..|']];
             var testNumberDigitsText = '\n' + '... ' + '\n' + '..| ' + '\n' + '..| ' + '\n';
