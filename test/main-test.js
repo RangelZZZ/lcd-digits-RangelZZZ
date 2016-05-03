@@ -1,14 +1,12 @@
 describe(' integration testing', function () {
 
-    var lcdDigits = loadLcdDigits();
-
     it('should print correct  number digits when input has three numbers', function () {
 
         var firstNumber = 910;
 
         spyOn(console, 'log');
 
-        showLcdDigits(firstNumber, lcdDigits);
+        showLcdDigits(firstNumber);
 
         var testNumberDigitsText = '\n' + '._. ... ._. ' + '\n' + '|_| ..| |.| ' + '\n' + '..| ..| |_| ' + '\n';
         expect(console.log).toHaveBeenCalledWith(testNumberDigitsText);
@@ -21,7 +19,7 @@ describe(' integration testing', function () {
 
         spyOn(console, 'log');
 
-        showLcdDigits(secondNumber, lcdDigits);
+        showLcdDigits(secondNumber);
 
         var testNumberDigitsText = '\n' + '._. ._. ' + '\n' + '|_. |_. ' + '\n' + '|_| ._| ' + '\n';
         expect(console.log).toHaveBeenCalledWith(testNumberDigitsText);
@@ -34,7 +32,7 @@ describe(' integration testing', function () {
 
         spyOn(console, 'log');
 
-        showLcdDigits(thirdNumber, lcdDigits);
+        showLcdDigits(thirdNumber);
 
         var testNumberDigitsText = '\n' + '... ' + '\n' + '..| ' + '\n' + '..| ' + '\n';
         expect(console.log).toHaveBeenCalledWith(testNumberDigitsText);
@@ -48,8 +46,6 @@ describe('unit testing', function () {
 
     describe('getNumberDigits', function () {
 
-        var lcdDigits = loadLcdDigits();
-
         it('should print correct numberDigits when input has three numbers ', function () {
 
             var firstInteger = 910;
@@ -57,8 +53,7 @@ describe('unit testing', function () {
                 ['._.', '|_|', '..|'],
                 ['...', '..|', '..|'],
                 ['._.', '|.|', '|_|']];
-
-            var numberDigits = getNumberDigits(firstInteger, lcdDigits);
+            var numberDigits = getNumberDigits(firstInteger);
 
             expect(numberDigits).toEqual(testNumberDigits);
 
@@ -71,7 +66,7 @@ describe('unit testing', function () {
                 ['._.', '|_.', '|_|'],
                 ['._.', '|_.', '._|']];
 
-            var numberDigits = getNumberDigits(secondInteger, lcdDigits);
+            var numberDigits = getNumberDigits(secondInteger);
 
             expect(numberDigits).toEqual(testNumberdigits);
 
@@ -81,7 +76,7 @@ describe('unit testing', function () {
 
             var thirdInteger = 1;
             var testNumberdigits = [['...', '..|', '..|']];
-            var numberDigits = getNumberDigits(thirdInteger, lcdDigits);
+            var numberDigits = getNumberDigits(thirdInteger);
 
             expect(numberDigits).toEqual(testNumberdigits);
 
@@ -106,7 +101,7 @@ describe('unit testing', function () {
         it('should print correct NumberDigitsText when input has two numbers', function () {
 
             var secondNumberDigits = [['._.', '|_.', '|_|'],
-                                      ['._.', '|_.', '._|']];
+                ['._.', '|_.', '._|']];
             var testNumberDigitsText = '\n' + '._. ._. ' + '\n' + '|_. |_. ' + '\n' + '|_| ._| ' + '\n';
             var numberDigitsText = printNumberDigits(secondNumberDigits);
 
@@ -114,7 +109,7 @@ describe('unit testing', function () {
 
         });
 
-        it('should print correct NumberDigitsText when input has only one number',function(){
+        it('should print correct NumberDigitsText when input has only one number', function () {
 
             var thirdNumberDigits = [['...', '..|', '..|']];
             var testNumberDigitsText = '\n' + '... ' + '\n' + '..| ' + '\n' + '..| ' + '\n';
