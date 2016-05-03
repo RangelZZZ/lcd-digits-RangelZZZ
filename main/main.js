@@ -1,17 +1,18 @@
-function showLcdDigits(firstnumber, lcdDigits) {
+function showLcdDigits(firstnumber) {
 
-    var numberDigits = getNumberDigits(firstnumber, lcdDigits);
+    var numberDigits = getNumberDigits(firstnumber);
     var numberDigitsText = printNumberDigits(numberDigits);
 
     console.log(numberDigitsText);
 }
 
 
-function getNumberDigits(firstInteger, lcdDigits) {
+function getNumberDigits(firstInteger){
+
 
     var numberDigits = [];
     var stringNumber = firstInteger.toString();
-
+    var lcdDigits = loadLcdDigits();
     for (var i = 0; i < stringNumber.length; i++) {
         if (isExit(parseInt(stringNumber.charAt(i)), lcdDigits)) {
             var digit = isExit(parseInt(stringNumber.charAt(i)), lcdDigits);
