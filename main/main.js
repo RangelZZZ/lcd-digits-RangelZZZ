@@ -7,7 +7,7 @@ function showLcdDigits(integer) {
 }
 
 
-function getNumberDigits(integer){
+function getNumberDigits(integer) {
 
 
     var numberDigits = [];
